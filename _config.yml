@@ -1,10 +1,11 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Statistics for Particle Physics 
-author: José Ángel Hernando Morata, Xabier Cid Vidal
+title: Machine Learning for Physics
+author: X. Cid Vidal (based on "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorF\
+low", from Aurelien Geron)
 logo: logo.png
-copyright: USC - J.A. Hernando, X. Cid Vidal - 2025
+copyright: USC - X. Cid Vidal (based on A. Geron) - 2025
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -59,5 +60,5 @@ html:
 
 launch_buttons:
   #binderhub_url: "https://mybinder.org"
-  binder_url: "https://mybinder.org/v2/gh/xabiercidvidal/USC-TA/master"
+  binder_url: "https://mybinder.org/v2/gh/xabiercidvidal/USC-AA/master"
   colab_url: "https://colab.research.google.com"

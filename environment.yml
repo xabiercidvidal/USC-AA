@@ -1,4 +1,4 @@
-name: USC-TA3
+name: USC-AA
 channels:
   - conda-forge
 dependencies:
@@ -8,4 +8,8 @@ dependencies:
   - numpy
   - matplotlib
   - scipy
+  - pandas
+  - keras
+  - sklearn
+
 
