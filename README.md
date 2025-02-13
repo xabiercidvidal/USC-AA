@@ -1,6 +1,6 @@
 # Universidade de Santiago de Compostela
 ## Facultade de Física
-## Master de Física
+## Master en Física
 ## Aprendizaxe Automática en Física
 ### author: X. Cid Vidal (based on "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow", from Aurelien Geron)
 ### date  : February 2025
