@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Setup &#8212; Machine Learning for Physics</title>
+    <title>Decision Trees &#8212; Machine Learning for Physics</title>
   
   
   
@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'decision_trees';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Setup" href="support_vector_machines.html" />
+    <link rel="prev" title="Support Vector Machines" href="support_vector_machines.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -168,18 +168,8 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="support_vector_machines.html">Setup</a></li>
-
-
-
-
-
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Setup</a></li>
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="support_vector_machines.html"><strong>Support Vector Machines</strong></a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#"><strong>Decision Trees</strong></a></li>
 </ul>
 
     </div>
@@ -393,7 +383,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Setup</h1>
+    <h1>Decision Trees</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -403,13 +393,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Setup</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-visualizing">Training and visualizing</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-classes-and-class-probabilities">Predicting classes and class probabilities</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-to-training-set-details">Sensitivity to training set details</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-trees">Regression trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-visualizing">Training and visualizing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-classes-and-class-probabilities">Predicting classes and class probabilities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-to-training-set-details">Sensitivity to training set details</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-trees">Regression trees</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -420,10 +409,11 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><strong>Decision Trees</strong></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="decision-trees">
+<h1><strong>Decision Trees</strong><a class="headerlink" href="#decision-trees" title="Link to this heading">#</a></h1>
 <p><em>All credits to Aurelien Geron, adapted from his book “Hands-on Machine Learning”</em></p>
-<section class="tex2jax_ignore mathjax_ignore" id="setup">
-<h1>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h1>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
 <p>First, let’s make sure this notebook works well in both python 2 and 3, import a few common modules, ensure MatplotLib plots figures inline and prepare a function to save the figures:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -459,8 +449,8 @@
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="training-and-visualizing">
-<h1>Training and visualizing<a class="headerlink" href="#training-and-visualizing" title="Link to this heading">#</a></h1>
+<section id="training-and-visualizing">
+<h2>Training and visualizing<a class="headerlink" href="#training-and-visualizing" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.datasets</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_iris</span>
@@ -502,12 +492,13 @@
 <li><p><a class="reference external" href="https://dreampuf.github.io/GraphvizOnline/">https://dreampuf.github.io/GraphvizOnline/</a> copy code from the .dot</p></li>
 <li><p>dot -Tpng iris_tree.dot -o iris_tree.png, after having installed the graphviz package</p></li>
 </ul>
-<p><img alt="title" src="images/graphviz.png" /></p>
+<p><img alt="title" src="_images/graphviz.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## yet another method...</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>pydotplus
+<span class="c1">## yet another method...</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">six</span><span class="w"> </span><span class="kn">import</span> <span class="n">StringIO</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pydot</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pydotplus</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pydotp</span>
 
 <span class="n">dot_data</span> <span class="o">=</span> <span class="n">StringIO</span><span class="p">()</span>
 
@@ -522,8 +513,8 @@
     <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">dot_data</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>
-<span class="n">graph</span> <span class="o">=</span> <span class="n">pydot</span><span class="o">.</span><span class="n">graph_from_dot_data</span><span class="p">(</span><span class="n">dot_data</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>
-<span class="n">graph</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">write_png</span><span class="p">(</span><span class="s2">&quot;proba.png&quot;</span><span class="p">)</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">pydotp</span><span class="o">.</span><span class="n">graph_from_dot_data</span><span class="p">(</span><span class="n">dot_data</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">write_png</span><span class="p">(</span><span class="s2">&quot;proba.png&quot;</span><span class="p">)</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
 <span class="n">Image</span><span class="p">(</span><span class="s2">&quot;proba.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
@@ -531,7 +522,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>digraph Tree {
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pydotplus in /Users/Xabier/jupyter/lib/python3.7/site-packages (2.0.2)
+Requirement already satisfied: pyparsing&gt;=2.0.1 in /Users/Xabier/jupyter/lib/python3.7/site-packages (from pydotplus) (3.1.4)
+
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">23.3.2</span> -&gt; <span class=" -Color -Color-Green">24.0</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">pip install --upgrade pip</span>
+digraph Tree {
 node [shape=box] ;
 0 [label=&quot;petal length (cm) &lt;= 2.45\ngini = 0.667\nsamples = 150\nvalue = [50, 50, 50]\nclass = setosa&quot;] ;
 1 [label=&quot;gini = 0.0\nsamples = 50\nvalue = [50, 0, 0]\nclass = setosa&quot;] ;
@@ -545,7 +541,7 @@ node [shape=box] ;
 }
 </pre></div>
 </div>
-<a class="reference internal image-reference" href="_images/2164349bf7c3a092f2f2b5ab0059d11feedf1cd45db003a162d2d90469e4a28b.png"><img alt="_images/2164349bf7c3a092f2f2b5ab0059d11feedf1cd45db003a162d2d90469e4a28b.png" src="_images/2164349bf7c3a092f2f2b5ab0059d11feedf1cd45db003a162d2d90469e4a28b.png" style="width: 600px; height: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/70648b5d6c0ade7eb709f38598e58c507a45b195d2b380082a483db2a09ec24e.png"><img alt="_images/70648b5d6c0ade7eb709f38598e58c507a45b195d2b380082a483db2a09ec24e.png" src="_images/70648b5d6c0ade7eb709f38598e58c507a45b195d2b380082a483db2a09ec24e.png" style="width: 600px; height: 600px;" /></a>
 </div>
 </div>
 <div class="cell docutils container">
@@ -600,8 +596,8 @@ node [shape=box] ;
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="predicting-classes-and-class-probabilities">
-<h1>Predicting classes and class probabilities<a class="headerlink" href="#predicting-classes-and-class-probabilities" title="Link to this heading">#</a></h1>
+<section id="predicting-classes-and-class-probabilities">
+<h2>Predicting classes and class probabilities<a class="headerlink" href="#predicting-classes-and-class-probabilities" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree_clf</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">]])</span>
@@ -627,8 +623,8 @@ node [shape=box] ;
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="sensitivity-to-training-set-details">
-<h1>Sensitivity to training set details<a class="headerlink" href="#sensitivity-to-training-set-details" title="Link to this heading">#</a></h1>
+<section id="sensitivity-to-training-set-details">
+<h2>Sensitivity to training set details<a class="headerlink" href="#sensitivity-to-training-set-details" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">[(</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">==</span><span class="n">X</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">][</span><span class="n">y</span><span class="o">==</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y</span><span class="o">==</span><span class="mi">1</span><span class="p">)]</span> <span class="c1"># widest Iris-Versicolor flower</span>
@@ -765,8 +761,8 @@ node [shape=box] ;
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="regression-trees">
-<h1>Regression trees<a class="headerlink" href="#regression-trees" title="Link to this heading">#</a></h1>
+<section id="regression-trees">
+<h2>Regression trees<a class="headerlink" href="#regression-trees" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Quadratic training set + noise</span>
@@ -858,8 +854,8 @@ node [shape=box] ;
         <span class="n">filled</span><span class="o">=</span><span class="kc">True</span>
     <span class="p">)</span>
 
-<span class="n">graph</span> <span class="o">=</span> <span class="n">pydot</span><span class="o">.</span><span class="n">graph_from_dot_data</span><span class="p">(</span><span class="n">dot_data</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>
-<span class="n">graph</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">write_png</span><span class="p">(</span><span class="s2">&quot;proba1.png&quot;</span><span class="p">)</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">pydotp</span><span class="o">.</span><span class="n">graph_from_dot_data</span><span class="p">(</span><span class="n">dot_data</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">write_png</span><span class="p">(</span><span class="s2">&quot;proba1.png&quot;</span><span class="p">)</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
 <span class="n">Image</span><span class="p">(</span><span class="s2">&quot;proba1.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
@@ -867,7 +863,7 @@ node [shape=box] ;
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="_images/527b035bf8f672c9fec8a29dc5aee0cce490b92339a9ab688b8b24fcfc04c3d8.png"><img alt="_images/527b035bf8f672c9fec8a29dc5aee0cce490b92339a9ab688b8b24fcfc04c3d8.png" src="_images/527b035bf8f672c9fec8a29dc5aee0cce490b92339a9ab688b8b24fcfc04c3d8.png" style="width: 800px; height: 400px;" /></a>
+<a class="reference internal image-reference" href="_images/09a81bf6156322ea9f19107374e481a39b66a204a9318d4835091ece33017349.png"><img alt="_images/09a81bf6156322ea9f19107374e481a39b66a204a9318d4835091ece33017349.png" src="_images/09a81bf6156322ea9f19107374e481a39b66a204a9318d4835091ece33017349.png" style="width: 800px; height: 400px;" /></a>
 </div>
 </div>
 <div class="cell docutils container">
@@ -924,8 +920,8 @@ node [shape=box] ;
         <span class="n">filled</span><span class="o">=</span><span class="kc">True</span>
     <span class="p">)</span>
 
-<span class="n">graph</span> <span class="o">=</span> <span class="n">pydot</span><span class="o">.</span><span class="n">graph_from_dot_data</span><span class="p">(</span><span class="n">dot_data</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>
-<span class="n">graph</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">write_png</span><span class="p">(</span><span class="s2">&quot;proba2.png&quot;</span><span class="p">)</span>
+<span class="n">graph</span> <span class="o">=</span> <span class="n">pydotp</span><span class="o">.</span><span class="n">graph_from_dot_data</span><span class="p">(</span><span class="n">dot_data</span><span class="o">.</span><span class="n">getvalue</span><span class="p">())</span>
+<span class="n">graph</span><span class="o">.</span><span class="n">write_png</span><span class="p">(</span><span class="s2">&quot;proba2.png&quot;</span><span class="p">)</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span>
 <span class="n">Image</span><span class="p">(</span><span class="s2">&quot;proba2.png&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
@@ -933,9 +929,10 @@ node [shape=box] ;
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="_images/dee5068e026d66f1a6fe7147493ae367b445e1f694e5f622be0e27dee1f6de4c.png"><img alt="_images/dee5068e026d66f1a6fe7147493ae367b445e1f694e5f622be0e27dee1f6de4c.png" src="_images/dee5068e026d66f1a6fe7147493ae367b445e1f694e5f622be0e27dee1f6de4c.png" style="width: 1800px; height: 400px;" /></a>
+<a class="reference internal image-reference" href="_images/8c95e55d71e5d0334529c10d226b7e2b12809e5a27d25d3a713ebc9e70760727.png"><img alt="_images/8c95e55d71e5d0334529c10d226b7e2b12809e5a27d25d3a713ebc9e70760727.png" src="_images/8c95e55d71e5d0334529c10d226b7e2b12809e5a27d25d3a713ebc9e70760727.png" style="width: 1800px; height: 400px;" /></a>
 </div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -974,7 +971,7 @@ node [shape=box] ;
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Setup</p>
+        <p class="prev-next-title"><strong>Support Vector Machines</strong></p>
       </div>
     </a>
 </div>
@@ -994,13 +991,12 @@ node [shape=box] ;
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Setup</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-visualizing">Training and visualizing</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-classes-and-class-probabilities">Predicting classes and class probabilities</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-to-training-set-details">Sensitivity to training set details</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-trees">Regression trees</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#training-and-visualizing">Training and visualizing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#predicting-classes-and-class-probabilities">Predicting classes and class probabilities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sensitivity-to-training-set-details">Sensitivity to training set details</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#regression-trees">Regression trees</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
