@@ -5,3 +5,4 @@ format: jb-book
 root: intro.md
 chapters:
 - file: support_vector_machines.ipynb
+- file: decision_trees.ipynb
