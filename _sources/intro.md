@@ -20,3 +20,6 @@ Apart from ML libraries, we will use Python scientific toolkits, Matplotlib, Num
 
 ```{tableofcontents}
 ```
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/xabiercidvidal/USC-AA/master)
+
