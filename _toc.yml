@@ -6,3 +6,5 @@ root: intro.md
 chapters:
 - file: support_vector_machines.ipynb
 - file: decision_trees.ipynb
+- file: ensemble_learning.ipynb
+- file: random_forests.ipynb
