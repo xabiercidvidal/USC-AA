@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Setup &#8212; Machine Learning for Physics</title>
+    <title>Ensemble learning &#8212; Machine Learning for Physics</title>
   
   
   
@@ -63,7 +63,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'ensemble_learning';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Setup" href="random_forests.html" />
+    <link rel="next" title="Random Forests" href="random_forests.html" />
     <link rel="prev" title="Decision Trees" href="decision_trees.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -171,13 +171,8 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="support_vector_machines.html"><strong>Support Vector Machines</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="decision_trees.html"><strong>Decision Trees</strong></a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Setup</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="random_forests.html">Setup</a></li>
-
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ensemble learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="random_forests.html">Random Forests</a></li>
 </ul>
 
     </div>
@@ -391,7 +386,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Setup</h1>
+    <h1>Ensemble learning</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -401,18 +396,15 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Setup</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#voting-classifiers">Voting classifiers</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note-here-one-needs-to-ask-for-the-probability-of-svc-to-be-calculated">Note here one needs to ask for the probability of SVC to be calculated!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voting-classifiers">Voting classifiers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-here-one-needs-to-ask-for-the-probability-of-svc-to-be-calculated">Note here one needs to ask for the probability of SVC to be calculated!</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-ensembles">Bagging ensembles</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-ensembles">Bagging ensembles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#out-of-bag-evaluation">Out of bag evaluation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-voting-classifier">Exercise: Voting Classifier</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -423,10 +415,11 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <p><strong>Ensemble learning</strong></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="ensemble-learning">
+<h1>Ensemble learning<a class="headerlink" href="#ensemble-learning" title="Link to this heading">#</a></h1>
 <p><em>All credits to Aurelien Geron, adapted from his book “Hands-on Machine Learning”</em></p>
-<section class="tex2jax_ignore mathjax_ignore" id="setup">
-<h1>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h1>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading">#</a></h2>
 <p>First, let’s make sure this notebook works well in both python 2 and 3, import a few common modules, ensure MatplotLib plots figures inline and prepare a function to save the figures:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -463,8 +456,8 @@
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="voting-classifiers">
-<h1>Voting classifiers<a class="headerlink" href="#voting-classifiers" title="Link to this heading">#</a></h1>
+<section id="voting-classifiers">
+<h2>Voting classifiers<a class="headerlink" href="#voting-classifiers" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
@@ -552,7 +545,7 @@ VotingClassifier 0.896
 </div>
 </div>
 <section id="note-here-one-needs-to-ask-for-the-probability-of-svc-to-be-calculated">
-<h2>Note here one needs to ask for the probability of SVC to be calculated!<a class="headerlink" href="#note-here-one-needs-to-ask-for-the-probability-of-svc-to-be-calculated" title="Link to this heading">#</a></h2>
+<h3>Note here one needs to ask for the probability of SVC to be calculated!<a class="headerlink" href="#note-here-one-needs-to-ask-for-the-probability-of-svc-to-be-calculated" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">log_clf</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">solver</span><span class="o">=</span><span class="s2">&quot;liblinear&quot;</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
@@ -619,8 +612,8 @@ VotingClassifier 0.912
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="bagging-ensembles">
-<h1>Bagging ensembles<a class="headerlink" href="#bagging-ensembles" title="Link to this heading">#</a></h1>
+<section id="bagging-ensembles">
+<h2>Bagging ensembles<a class="headerlink" href="#bagging-ensembles" title="Link to this heading">#</a></h2>
 <p>If one wants pasting instead of bagging, set boostrap to False</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -737,6 +730,7 @@ Saving figure decision_tree_without_and_with_pasting_plot
 <img alt="_images/0d6c05c92b6c73b301581884d25ce17b00ab20852bb4dec83b3c2a3b449ec378.png" src="_images/0d6c05c92b6c73b301581884d25ce17b00ab20852bb4dec83b3c2a3b449ec378.png" />
 </div>
 </div>
+</section>
 <section id="out-of-bag-evaluation">
 <h2>Out of bag evaluation<a class="headerlink" href="#out-of-bag-evaluation" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -1406,7 +1400,7 @@ Training the MLPClassifier(activation=&#39;relu&#39;, alpha=0.0001, batch_size=&
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Setup</p>
+        <p class="prev-next-title">Random Forests</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1427,18 +1421,15 @@ Training the MLPClassifier(activation=&#39;relu&#39;, alpha=0.0001, batch_size=&
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Setup</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#voting-classifiers">Voting classifiers</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#note-here-one-needs-to-ask-for-the-probability-of-svc-to-be-calculated">Note here one needs to ask for the probability of SVC to be calculated!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#setup">Setup</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#voting-classifiers">Voting classifiers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#note-here-one-needs-to-ask-for-the-probability-of-svc-to-be-calculated">Note here one needs to ask for the probability of SVC to be calculated!</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-ensembles">Bagging ensembles</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bagging-ensembles">Bagging ensembles</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#out-of-bag-evaluation">Out of bag evaluation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise-voting-classifier">Exercise: Voting Classifier</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
