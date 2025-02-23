@@ -8,3 +8,6 @@ chapters:
 - file: decision_trees.ipynb
 - file: ensemble_learning.ipynb
 - file: random_forests.ipynb
+- file: dimensionality_reduction.ipynb
+- file: unsupervised_learning_1.ipynb
+- file: unsupervised_learning_2.ipynb
