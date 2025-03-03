@@ -1993,6 +1993,11 @@ Epoch 30/30
 </pre></div>
 </div>
 <p>You can then open your web browser to <a class="reference external" href="http://localhost:6006">localhost:6006</a> and use TensorBoard. Once you are done, press Ctrl-C in the terminal window, this will shutdown the TensorBoard server.</p>
+<p>Alternatively, you can load TensorBoard’s Jupyter extension and run it like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">load_ext</span> <span class="n">tensorboard</span>
+<span class="o">%</span><span class="n">tensorboard</span> <span class="o">--</span><span class="n">logdir</span><span class="o">=./</span><span class="n">my_logs</span> <span class="o">--</span><span class="n">port</span><span class="o">=</span><span class="mi">6006</span>
+</pre></div>
+</div>
 </section>
 <section id="hyperparameter-tuning">
 <h2>Hyperparameter Tuning<a class="headerlink" href="#hyperparameter-tuning" title="Link to this heading">#</a></h2>
