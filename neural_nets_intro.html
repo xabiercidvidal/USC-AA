@@ -423,7 +423,8 @@
   <section class="tex2jax_ignore mathjax_ignore" id="introduction-to-neural-networks-with-keras">
 <h1><strong>Introduction to Neural Networks with Keras</strong><a class="headerlink" href="#introduction-to-neural-networks-with-keras" title="Link to this heading">#</a></h1>
 <p><em>All credits to Aurelien Geron, adapted from his book “Hands-on Machine Learning”</em></p>
-<center><img src="./figs/keras.png" width="540" height="240"></center><ul class="simple">
+<a class="reference internal image-reference" href="_images/keras.png"><img alt="_images/keras.png" src="_images/keras.png" style="width: 540px; height: 240px;" /></a>
+<ul class="simple">
 <li><p>Keras is a high-level Deep Learning API that allows building, training and executing all sorts of NNs.</p>
 <ul>
 <li><p>Its evaluation relies on a compuation backend!</p></li>
@@ -437,10 +438,10 @@
 </ul>
 </li>
 </ul>
-<ul>
-<li><p>We will focus on the TF implementation of the Keras API (tf.keras). Multimultibackend also possible!</p>
-  <center><img src="image2.jpg" width="740" height="440"></center></li>
+<ul class="simple">
+<li><p>We will focus on the TF implementation of the Keras API (tf.keras). Multimultibackend also possible!</p></li>
 </ul>
+<a class="reference internal image-reference" href="_images/image2.jpg"><img alt="_images/image2.jpg" src="_images/image2.jpg" style="width: 740px; height: 440px;" /></a>
 <ul>
 <li><p>A very popular alternative to Keras/TensorFlow is <strong>PyTorch</strong></p>
 <ul class="simple">
@@ -716,7 +717,7 @@ Coat
 <img alt="_images/cf6634d72cdb586e2c976e4c1966707e19b0cd54d62911f06b0b3414f3afffad.png" src="_images/cf6634d72cdb586e2c976e4c1966707e19b0cd54d62911f06b0b3414f3afffad.png" />
 </div>
 </div>
-<center><img src="images/activation_functions_plot.png" width=800" height="440"></center></section>
+</section>
 <section id="sequential-model">
 <h2>Sequential model<a class="headerlink" href="#sequential-model" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
@@ -1189,16 +1190,15 @@ Epoch 20/20
 </section>
 <section id="functional-api">
 <h2>Functional API<a class="headerlink" href="#functional-api" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Not all neural network models are simply sequential.</p>
 <ul>
+<li><p>Not all neural network models are simply sequential.</p>
+<ul class="simple">
 <li><p>Wide &amp; Deep neural network</p></li>
 </ul>
+<a class="reference internal image-reference" href="_images/net1.jpg"><img alt="_images/net1.jpg" src="_images/net1.jpg" style="width: 400px;" /></a>
 </li>
 </ul>
- <center>
-    <img src="net1.jpg" width=400>
-</center><div class="cell docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="n">tf</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">set_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
@@ -1304,16 +1304,15 @@ Epoch 20/20
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>Also possible to send different subsets of input features through the wide or deep paths.</p>
 <ul>
+<li><p>Also possible to send different subsets of input features through the wide or deep paths.</p>
+<ul class="simple">
 <li><p>Send different features through both paths</p></li>
 </ul>
+<a class="reference internal image-reference" href="_images/net2.jpg"><img alt="_images/net2.jpg" src="_images/net2.jpg" style="width: 400px;" /></a>
 </li>
 </ul>
- <center>
-    <img src="net2.jpg" width=400>
-</center><div class="cell docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Send 5 features (features 0 to 4), and 6 through the deep path (features 2 to 7).</span>
 <span class="c1">## Note that 3 features will go through both (features 2, 3 and 4).</span>
@@ -1399,18 +1398,17 @@ Epoch 20/20
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>Yet another alternative, adding additional outputs</p>
 <ul>
+<li><p>Yet another alternative, adding additional outputs</p>
+<ul class="simple">
 <li><p>Requried by task, e.g., locate and classify the main object in a picture</p></li>
 <li><p>Multiple independent tasks based on the same data, e.g., multitask classification (happy or not, man or woman)</p></li>
 <li><p>Regularization: Auxiliary outputs to ensure that the underlying part of the network learns something useful on its own</p></li>
 </ul>
+<a class="reference internal image-reference" href="_images/net3.jpg"><img alt="_images/net3.jpg" src="_images/net3.jpg" style="width: 400px;" /></a>
 </li>
 </ul>
- <center>
-    <img src="net3.jpg" width=400>
-</center><div class="cell docutils container">
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
 <span class="n">tf</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">set_seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
