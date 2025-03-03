@@ -11,3 +11,4 @@ chapters:
 - file: dimensionality_reduction.ipynb
 - file: unsupervised_learning_1.ipynb
 - file: unsupervised_learning_2.ipynb
+- file: neural_nets_intro.ipynb
