@@ -12,3 +12,4 @@ chapters:
 - file: unsupervised_learning_1.ipynb
 - file: unsupervised_learning_2.ipynb
 - file: neural_nets_intro.ipynb
+- file: training_deep_neural_networks.ipynb
