@@ -3,7 +3,7 @@
 ## Master en Física
 ## Aprendizaxe Automática en Física
 ### author: X. Cid Vidal (based on "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow", from Aurelien Geron)
-### date  : February 2025
+### date  : February 2026
 
 This repository contains Python-Notebooks and Python code for the lectures
 on Machine Learning for Physics
