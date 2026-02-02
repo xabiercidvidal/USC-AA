@@ -7,7 +7,7 @@ Institution: Physics Master, **Universidade de Santiago de Compostela**
 
 email: [xabier.cid@usc.gal](mailto:xabier.cid@usc.gal)
 
-Version: February 2025
+Version: February 2026
 
 
 ## About these lectures
