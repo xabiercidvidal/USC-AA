@@ -4,7 +4,7 @@
 title: Machine Learning for Physics
 author: X. Cid Vidal (based on "Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow" from Aurelien Geron)
 logo: logo.png
-copyright: USC - X. Cid Vidal (based on A. Geron) - 2025
+copyright: USC - X. Cid Vidal (based on A. Geron) - 2026
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
